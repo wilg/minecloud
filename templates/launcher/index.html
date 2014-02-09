@@ -37,7 +37,8 @@
                 {% else %}
                 {{ instance.ip_address }}
                 {% endif %}
-            </span>.</h2>
+            </span>
+        </h2>
         <div class="row">
             <div class="span9">
                 <div class="alert alert-info alert-block"><p>Now, it's restoring saved game data. Almost ready...</p></div>
@@ -50,7 +51,7 @@
                         </tr>
                         {% if no_ip_hostname %}
                         <tr>
-                            <td class="server-info-field">Hostname</td>
+                            <td class="server-info-field">DDNS Hostname</td>
                             <td>{{ no_ip_hostname }}</td>
                         </tr>
                         {% endif %}
@@ -76,15 +77,21 @@
                 {% else %}
                 {{ instance.ip_address }}
                 {% endif %}
-            </span>.
+            </span>
         </h2>
         <div class="row">
             <div class="span9">
                 <div class="alert alert-success alert-block">
                     <h4><p>Join the server!</p></h4>
                     <ul>
+                        {% if no_ip_hostname %}
+                        <li>Open Minecraft, click Multiplayer, and add a new server.</li>
+                        <li>Copy above hostname into the Server Address field.</li>
+                        {% else %}
                         <li>Open Minecraft, click Multiplayer, and edit the Server Info.</li>
                         <li>Copy the IP address into the Server Address field.</li>
+                        <li>This IP address will change each time the server is restarted.</li>
+                        {% endif %}
                     </ul>
                 </div>
 
@@ -97,7 +104,7 @@
                         </tr>
                         {% if no_ip_hostname %}
                         <tr>
-                            <td class="server-info-field">Hostname</td>
+                            <td class="server-info-field">DDNS Hostname</td>
                             <td>{{ no_ip_hostname }}</td>
                         </tr>
                         {% endif %}
