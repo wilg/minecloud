@@ -10,6 +10,7 @@ from . import tasks
 from .models import Instance, Session
 from .sseview import SseView, send_event
 
+import os
 
 @login_required
 def index(request):
