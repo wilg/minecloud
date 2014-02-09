@@ -41,6 +41,12 @@
                             <td class="server-info-field">IP Address</td>
                             <td>{{ instance.ip_address }}</td>
                         </tr>
+                        {% if os.getenv('NO_IP_HOSTNAME', None) %}
+                        <tr>
+                            <td class="server-info-field">Hostname</td>
+                            <td>{{ os.getenv('NO_IP_HOSTNAME', None) }}</td>
+                        </tr>
+                        {% endif %}
                         <tr>
                             <td class="server-info-field">Start Time</td>
                             <td>{{ instance.start }}</td>
@@ -74,6 +80,12 @@
                             <td class="server-info-field">IP Address</td>
                             <td>{{ instance.ip_address }}</td>
                         </tr>
+                        {% if os.getenv('NO_IP_HOSTNAME', None) %}
+                        <tr>
+                            <td class="server-info-field">Hostname</td>
+                            <td>{{ os.getenv('NO_IP_HOSTNAME', None) }}</td>
+                        </tr>
+                        {% endif %}
                         <tr>
                             <td class="server-info-field">Start Time</td>
                             <td>{{ instance.start }}</td>
@@ -177,6 +189,6 @@
                 location.reload(true)
         }, false);
 
-    });    
+    });
     </script>
 {% endblock content %}
