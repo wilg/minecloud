@@ -41,10 +41,10 @@
                             <td class="server-info-field">IP Address</td>
                             <td>{{ instance.ip_address }}</td>
                         </tr>
-                        {% if os.getenv('NO_IP_HOSTNAME', None) %}
+                        {% if no_ip_hostname %}
                         <tr>
                             <td class="server-info-field">Hostname</td>
-                            <td>{{ os.getenv('NO_IP_HOSTNAME', None) }}</td>
+                            <td>{{ no_ip_hostname }}</td>
                         </tr>
                         {% endif %}
                         <tr>
@@ -80,10 +80,10 @@
                             <td class="server-info-field">IP Address</td>
                             <td>{{ instance.ip_address }}</td>
                         </tr>
-                        {% if os.getenv('NO_IP_HOSTNAME', None) %}
+                        {% if no_ip_hostname %}
                         <tr>
                             <td class="server-info-field">Hostname</td>
-                            <td>{{ os.getenv('NO_IP_HOSTNAME', None) }}</td>
+                            <td>{{ no_ip_hostname }}</td>
                         </tr>
                         {% endif %}
                         <tr>

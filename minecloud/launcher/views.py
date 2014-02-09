@@ -13,6 +13,7 @@ from .sseview import SseView, send_event
 
 @login_required
 def index(request):
+    no_ip_hostname = os.getenv('NO_IP_HOSTNAME', None)
     instance = None
     current_sessions = None
     err_msg = None
