@@ -30,7 +30,14 @@
     </div>
 {% elif instance and instance.state == 'pending' %}
     <div id="msm-up">
-        <h2>Server is <span class="text-info">waking up</span> at <span class="text-info">{{ instance.ip_address }}</span>.</h2>
+        <h2>Server is <span class="text-info">waking up</span> at
+            <span class="text-info">
+                {% if no_ip_hostname %}
+                {{ no_ip_hostname }}
+                {% else %}
+                {{ instance.ip_address }}
+                {% endif %}
+            </span>.</h2>
         <div class="row">
             <div class="span9">
                 <div class="alert alert-info alert-block"><p>Now, it's restoring saved game data. Almost ready...</p></div>
@@ -62,7 +69,15 @@
     </div>
 {% elif instance and instance.state == 'running' %}
     <div id="msm-up">
-        <h2>Server is <span class="text-success">running</span> at <span class="text-success">{{ instance.ip_address }}</span>.</h2>
+        <h2>Server is <span class="text-success">running</span> at
+            <span class="text-success">
+                {% if no_ip_hostname %}
+                {{ no_ip_hostname }}
+                {% else %}
+                {{ instance.ip_address }}
+                {% endif %}
+            </span>.
+        </h2>
         <div class="row">
             <div class="span9">
                 <div class="alert alert-success alert-block">
