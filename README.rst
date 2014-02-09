@@ -109,6 +109,14 @@ Steps to get up-and-running on Heroku:
     # to set the MCL_EC2_REGION variable
     $ heroku config:set MCL_EC2_REGION=<EC2 region name>
 
+    # Optional Dynamic DNS Settings
+    # If you don't want to have a constantly-changing IP address, you can add your
+    # login credentials for https://www.noip.com (a free service that will give you)
+    # a URL that Minecloud will automatically point to your server IP.
+    $ heroku config:set NO_IP_HOSTNAME=my-great-hostname.servegame.com
+    $ heroku config:set NO_IP_USERNAME=me@example.com
+    $ heroku config:set NO_IP_PASSWORD=secretpassword
+
     # Review all your settings
     $ heroku config
 
