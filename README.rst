@@ -111,8 +111,10 @@ Steps to get up-and-running on Heroku:
 
     # Optional Dynamic DNS Settings
     # If you don't want to have a constantly-changing IP address, you can add your
-    # login credentials for https://www.noip.com (a free service that will give you)
-    # a URL that Minecloud will automatically point to your server IP.
+    # login credentials for https://www.noip.com (which is free!)
+    #
+    # This service gives you a URL that Minecloud will automatically point 
+    # to your server IP and keep up to date.
     $ heroku config:set NO_IP_HOSTNAME=my-great-hostname.servegame.com
     $ heroku config:set NO_IP_USERNAME=me@example.com
     $ heroku config:set NO_IP_PASSWORD=secretpassword
