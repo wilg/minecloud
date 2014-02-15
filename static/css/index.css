@@ -13,8 +13,10 @@ table .server-info-field {
     padding: 4px 20px 4px 5px;
 }
 
-.reload-help {
-    font-size: 14px;
-    font-weight: lighter;
-    color: #da4f49;
+.player-table {
+  vertical-align: middle;
+}
+
+td.player-avatar, th.player-avatar {
+  width: 16px;
 }

@@ -119,28 +119,30 @@
                     </tbody>
                 </table>
 
+                <h3>Current Players <a class="btn btn-default btn-sm pull-right" href="#" onclick="window.location.reload(true);">Refresh</a></h3>
                 {% if sessions %}
-                <h3>Current Players <span class="reload-help">(Reload page to update list)</span></h3>
-                <table class="table table-bordered table-condensed">
+                <table class="table table-bordered table-condensed player-table">
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Playing Since</th>
+                            <th class="player-avatar"></th>
+                            <th class="player-name">Name</th>
+                            <th class="player-login-date">Playing Since</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for session in sessions %}
                         <tr>
-                            <td><img src="{{ session.avatarUrl }}" alt="{{ session.user.username }}"></td>
-                            <td>{{ session.user.username }}</td>
-                            <td>{{ session.login }}</td>
+                            <td class="player-avatar"><img src="{{ session.avatarUrl }}" alt="{{ session.user.username }}"></td>
+                            <td class="player-name">{{ session.user.username }}</td>
+                            <td class="player-login-date">{{ session.login }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
                 {% else %}
-                <h3>No Current Players <span class="reload-help">(Reload page to update list)</span></h3>
+                <div class="well">
+                    Nobody's playing right now.
+                </div>
                 {% endif %}
 
                 <form action="{% url 'mcl_terminate' %}" method="post">
