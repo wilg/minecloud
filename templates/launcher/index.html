@@ -95,30 +95,6 @@
                     </ul>
                 </div>
 
-                <h3>Server Info</h3>
-                <table class="table table-condensed">
-                    <tbody>
-                        <tr>
-                            <td class="server-info-field">IP Address</td>
-                            <td>{{ instance.ip_address }}</td>
-                        </tr>
-                        {% if no_ip_hostname %}
-                        <tr>
-                            <td class="server-info-field">DDNS Hostname</td>
-                            <td>{{ no_ip_hostname }}</td>
-                        </tr>
-                        {% endif %}
-                        <tr>
-                            <td class="server-info-field">Start Time</td>
-                            <td>{{ instance.start }}</td>
-                        </tr>
-                        <tr>
-                            <td class="server-info-field">Launched By</td>
-                            <td>{{ instance.launched_by.username}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-
                 <h3>Current Players <a class="btn btn-default btn-sm pull-right" href="#" onclick="window.location.reload(true);">Refresh</a></h3>
                 {% if sessions %}
                 <table class="table table-bordered table-condensed player-table">
@@ -144,6 +120,30 @@
                     Nobody's playing right now.
                 </div>
                 {% endif %}
+
+                <h3>Server Info</h3>
+                <table class="table table-condensed">
+                    <tbody>
+                        <tr>
+                            <td class="server-info-field">IP Address</td>
+                            <td>{{ instance.ip_address }}</td>
+                        </tr>
+                        {% if no_ip_hostname %}
+                        <tr>
+                            <td class="server-info-field">DDNS Hostname</td>
+                            <td>{{ no_ip_hostname }}</td>
+                        </tr>
+                        {% endif %}
+                        <tr>
+                            <td class="server-info-field">Start Time</td>
+                            <td>{{ instance.start }}</td>
+                        </tr>
+                        <tr>
+                            <td class="server-info-field">Launched By</td>
+                            <td>{{ instance.launched_by.username}}</td>
+                        </tr>
+                    </tbody>
+                </table>
 
                 <form action="{% url 'mcl_terminate' %}" method="post">
                     {% csrf_token %}
