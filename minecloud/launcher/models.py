@@ -24,3 +24,6 @@ class Session(models.Model):
 
     def __unicode__(self):
         return "%s, %s" % (self.user, self.instance)
+
+    def avatarUrl(self):
+        return "http://overviewer.org/avatar/" + self.user.username

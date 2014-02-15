@@ -131,6 +131,7 @@
                     <tbody>
                         {% for session in sessions %}
                         <tr>
+                            <td><img src="{{ session.avatarUrl }}" alt="{{ session.user.username }}"></td>
                             <td>{{ session.user.username }}</td>
                             <td>{{ session.login }}</td>
                         </tr>
