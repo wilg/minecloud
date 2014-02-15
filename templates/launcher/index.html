@@ -1,12 +1,6 @@
 {% extends 'launcher/base.html' %}
 {% load staticfiles %}
 
-{% block extra_navs %}
-{% if minecloud_map_url %}
-<li><a href="{% minecloud_map_url %}">View Map</a></li>
-{% endif %}
-{% endblock extra_navs %}
-
 {% block content %}
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="{% static 'js/eventsource.js' %}"></script>

@@ -24,7 +24,9 @@
                 <div class="container-narrow">
                     <a class="brand" href="{% url 'mcl_index' %}">Minecloud</a>
                     <ul class="nav pull-right">
-                        {% block extra_navs %}{% endblock %}
+                        {% if minecloud_map_url %}
+                        <li><a href="{% minecloud_map_url %}">View Map</a></li>
+                        {% endif %}
                         {% if user.is_authenticated %}
                         <li><a href="{% url 'auth_logout' %}">Log Out</a></li>
                         {% endif %}
