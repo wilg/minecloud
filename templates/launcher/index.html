@@ -69,15 +69,11 @@
     </div>
 {% elif instance and instance.state == 'running' %}
     <div id="msm-up">
-        <h2>Server is <span class="text-success">running</span> at
-            <span class="text-success">
-                {% if no_ip_hostname %}
-                {{ no_ip_hostname }}
-                {% else %}
-                {{ instance.ip_address }}
-                {% endif %}
-            </span>
-        </h2>
+        {% if no_ip_hostname %}
+        <h2><span class="text-success">{{ no_ip_hostname }}</span> is up!</h2>
+        {% else %}
+        <h2>Server is <span class="text-success">running</span> at <span class="text-success">{{ instance.ip_address }}</span></h2>
+        {% endif %}
         <div class="row">
             <div class="span9">
                 <div class="alert alert-success alert-block">
