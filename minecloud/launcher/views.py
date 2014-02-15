@@ -31,6 +31,7 @@ def index(request):
                   {'instance': instance,
                    'sessions': current_sessions,
                    'no_ip_hostname': os.getenv('NO_IP_HOSTNAME', None),
+                   'minecloud_map_url': os.getenv('MINECLOUD_MAP_URL', None),
                    'err_msg': err_msg})
 
 @login_required
